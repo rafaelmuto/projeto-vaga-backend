@@ -14,7 +14,9 @@ db = SQLAlchemy(app)
 
 migrate = Migrate(app, db)
 
-from Models.Departament import Departament
+from Models.Department import Department
+from Models.Collaborator import Collaborator
+from Models.Dependant import Dependant
 
 from Controllers.Test import *
 
