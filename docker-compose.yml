@@ -4,8 +4,11 @@ services:
   app:
     build:
       context: ./
+    environment:
+      - FLASK_APP=app
+      - FLASK_RUN_HOST=0.0.0.0
     ports:
-      - "8000:8000"
+      - "8000:5000"
     volumes:
       - ./app:/usr/src/app
     networks:
