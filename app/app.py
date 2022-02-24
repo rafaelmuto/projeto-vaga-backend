@@ -19,4 +19,5 @@ from Models.Collaborator import Collaborator
 from Models.Dependant import Dependant
 
 from Controllers.Test import *
+from Controllers.DepartmentController import *
 

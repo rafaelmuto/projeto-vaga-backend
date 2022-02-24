@@ -1,6 +1,9 @@
-from app import api, Resource
+from app import api, Resource, Department
 
 
-@api.Route("/api/department")
+@api.route("/api/department")
 class DepartmentController(Resource):
-    pass
+    def get(self):
+        allDepartment = Department.query.all()
+
+        return allDepartment
