@@ -20,4 +20,6 @@ from Models.Dependant import Dependant
 
 from Controllers.Test import *
 from Controllers.DepartmentController import *
+from Controllers.CollaboratorController import *
+from Controllers.DependantController import *
 
