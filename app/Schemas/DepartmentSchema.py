@@ -1,5 +1,4 @@
-from app import app
-from marshmallow import Schema, fields, ValidationError, pre_load
+from marshmallow import Schema, fields
 
 
 class DepartmentSchema(Schema):

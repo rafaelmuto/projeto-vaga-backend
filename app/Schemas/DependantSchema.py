@@ -1,11 +1,10 @@
-from app import app
-from flask_marshmallow import Marshmallow
+from marshmallow import Schema, fields
 
-ma = Marshmallow(app)
 
-class DependantSchema(ma.Schema):
-    class Meta:
-        fields = ('id', 'name')
+class DependantSchema(Schema):
+    id = fields.Integer()
+    name = fields.String()
+    createdAt = fields.DateTime()
 
 dependant_schema = DependantSchema()
 dependant_schema = DependantSchema(many=True)

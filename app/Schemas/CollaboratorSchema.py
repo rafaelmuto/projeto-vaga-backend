@@ -1,11 +1,10 @@
-from app import app
-from flask_marshmallow import Marshmallow
+from marshmallow import Schema, fields
 
-ma = Marshmallow(app)
 
-class CollaboratorSchema(ma.Schema):
-    class Meta:
-        fields = ('id', 'name')
+class CollaboratorSchema(Schema):
+    id = fields.Integer()
+    name = fields.String()
+    createdAt = fields.DateTime()
 
 collaborator_schema = CollaboratorSchema()
 collaborator_schema = CollaboratorSchema(many=True)
