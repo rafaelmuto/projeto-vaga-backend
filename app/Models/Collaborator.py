@@ -8,5 +8,8 @@ class Collaborator(db.Model):
     dependants = db.relationship('Dependant', backref='collaborator')
     createdAt = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
+    def hasDependants(self):
+        return len(self.dependants) > 0
+
     def __repr__(self) -> str:
         return f"id: {self.id}, Name : {self.name}, Department: {self.department_id}, createdAt: {self.createdAt}"

@@ -1,4 +1,4 @@
-from app import api, Collaborator, db
+from app import api, Collaborator, db, app
 from Schemas.CollaboratorSchema import collaborator_schema
 
 from flask import jsonify
@@ -12,6 +12,7 @@ collaborator_model = collaboratorNameSpace.model('Collaborator', {
     'id': fields.Integer(readonly=True, description='this is an id...'),
     'name': fields.String(required=True, description='every one has a name'),
     'department_id': fields.Integer(required=True, description='id of the department this person works at'),
+    'have_dependents': fields.Boolean(readonly=True, description='does this person have dependants?')
 })
 
 @collaboratorNameSpace.route("/api/collaborator")
@@ -46,6 +47,11 @@ class CollaboratorController(Resource):
 class CollaboratorIdController(Resource):
     def get(self, id):
         collaborator = Collaborator.query.get(id)
+
+        app.logger.info(collaborator)
+
         result = collaborator_schema.dump([collaborator])
+
+        app.logger.info(result)
 
         return jsonify(result)
