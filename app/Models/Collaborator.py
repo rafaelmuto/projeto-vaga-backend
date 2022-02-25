@@ -9,4 +9,4 @@ class Collaborator(db.Model):
     createdAt = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
     def __repr__(self) -> str:
-        return f"id: {self.id}, Name : {self.name}, createdAt: {self.createdAt}"
+        return f"id: {self.id}, Name : {self.name}, Department: {self.department_id}, createdAt: {self.createdAt}"

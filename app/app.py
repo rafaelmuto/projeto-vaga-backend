@@ -1,5 +1,5 @@
 from flask import Flask
-from flask_restx import Api, Resource
+from flask_restx import Api
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
@@ -18,7 +18,6 @@ from Models.Department import Department
 from Models.Collaborator import Collaborator
 from Models.Dependant import Dependant
 
-from Controllers.Test import *
 from Controllers.DepartmentController import *
 from Controllers.CollaboratorController import *
 from Controllers.DependantController import *
